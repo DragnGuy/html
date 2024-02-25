@@ -53,3 +53,38 @@ button{
     border-color: green;
     color: black;
 }
+
+.accordion {
+    background-color: rgb(191, 203, 191);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: rgb(114, 116, 121);
+    color: white;
+  }
+  
+  
+  
+  .panel {
+    color: white;
+    padding: 0 18px;
+    background-color: rgba(44, 43, 43, 0.456);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
