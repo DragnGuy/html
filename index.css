@@ -2,6 +2,7 @@ body{
     background-image: url(ServerBackGround.png);
     
     background-size: contain;
+    background-repeat: repeat-y;
     color: white;
     
 }
@@ -18,10 +19,11 @@ body{
 
 #FixedRight{
   padding-left: 35%;
+  padding-right: 5%;
   flex-direction: row;
   display: fixed;
   height: 100%;
-  width: 65%;
+  width: 60%;
 }
 
 #ToDoListContainer{
