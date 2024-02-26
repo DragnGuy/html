@@ -1,6 +1,8 @@
 body {
-    color: rgb(230, 230, 230);
-    background-color: rgb(49, 49, 49);
+  background-image: url(background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
   }
   
   .Topbar {
@@ -11,7 +13,6 @@ z-index: 50;
   .links{
     padding: 1rem;
     background-color: rgb(69, 69, 80);
-    justify-content: center;
     list-style-type: none;
     height: 5rem;
     display: flex;
@@ -31,6 +32,21 @@ z-index: 50;
     line-height: 3.5rem;
     font-weight: 700;
   }
+
+  .Back{
+    font-family: -apple-system;
+    text-shadow: 4px 4px 0 #000000;
+    padding-left: 1rem;
+    padding-right: 15rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+  }
+
   .current{
     color: gold;
     text-shadow: 5px 5px 0 #000000;
