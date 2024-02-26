@@ -1,7 +1,7 @@
 body{
     background-image: url(ServerBackGround.png);
     
-    background-size: contain;
+    background-size: cover;
     background-repeat: repeat-y;
     color: white;
     
