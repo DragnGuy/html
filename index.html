@@ -9,9 +9,16 @@
 
 
 <body>
+  <div id="video-background">
+    <video autoplay muted loop>
+        <source src="FireBackGround.mp4" type="video/mp4">
+    </video>
+</div>
+
 <div id="FixedLeft">
+  <div id="clock">8:10:45</div>
     <div id="ToDoListContainer">
-        <h1>To Do List</h1>
+        <h1>To Do List</h1> 
         <input type="text" id="taskInput" placeholder="Add a task" />
         <button id="addTaskBtn">Add Task!</button>
         <ul id="taskList"></ul>
@@ -19,8 +26,11 @@
 </div>
 
 
-<div id="FixedRight">
 
+
+
+
+<div id="FixedRight">
       <center><h1><b><u>WEBSITES</u></b></h1></center>
   <br>
   <br>
@@ -28,33 +38,21 @@
   <button class="accordion">Download Pages</button>
     <div class="panel">
       <div class="DownloadsPages">      
-          <button><a href="resorsedownloads.html">to DownloadsPages</a></button>
+          <center><button class="WebsiteButtons"><a href="resorsedownloads.html">Minecraft Resource Packs</a></button></center>
       </div>
     </div>
 
-
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    The End
 </div>
-    
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-</script>
+
+
 
 </body>
-
+<script src="openbox.js"></script>
+<script src="clock.js"></script>
 <script src="ToDoList.js"></script>
 
 </html>

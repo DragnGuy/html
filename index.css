@@ -1,8 +1,4 @@
 body{
-    background-image: url(ServerBackGround.png);
-    
-    background-size: cover;
-    background-repeat: repeat-y;
     color: white;
     
 }
@@ -15,6 +11,11 @@ body{
     height: 100vh;
     width: 30%;
     backdrop-filter: blur(16px);
+}
+
+#ClockContainer{
+  width: 15%;
+  padding-left: 15%;
 }
 
 #FixedRight{
@@ -43,6 +44,20 @@ button{
     margin-left: 10px;
 }
 
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+#video-background video {
+  min-width: 100%;
+  min-height: 100%;
+}
 
 
 #taskInput{
@@ -73,8 +88,6 @@ button{
     color: white;
   }
   
-  
-  
   .panel {
     color: white;
     padding: 0 18px;
@@ -90,3 +103,29 @@ button{
     float: right;
     margin-left: 5px;
   }
+
+  .WebsiteButtons{
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    text-decoration: none;
+    font-size: large;
+  }
+
+  a:link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(5, 0, 0);
+    text-decoration: none;
+  }
+
+  #clock {
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+  
