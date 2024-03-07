@@ -1,0 +1,182 @@
+{
+    "success": true,
+    "lastUpdated": 1709741595257,
+    "mayor": {
+        "key": "slayer",
+        "name": "Aatrox",
+        "perks": [
+            {
+                "name": "SLASHED Pricing",
+                "description": "Starting slayer quests is §ehalf price§7."
+            },
+            {
+                "name": "Pathfinder",
+                "description": "Gain rare drops §d20% §7more often."
+            }
+        ],
+        "election": {
+            "year": 334,
+            "candidates": [
+                {
+                    "key": "slayer",
+                    "name": "Aatrox",
+                    "perks": [
+                        {
+                            "name": "SLASHED Pricing",
+                            "description": "Starting slayer quests is §ehalf price§7."
+                        },
+                        {
+                            "name": "Pathfinder",
+                            "description": "Gain rare drops §d20% §7more often."
+                        }
+                    ],
+                    "votes": 649778
+                },
+                {
+                    "key": "fishing",
+                    "name": "Marina",
+                    "perks": [
+                        {
+                            "name": "Fishing XP Buff",
+                            "description": "Gain §3+50☯ Fishing Wisdom §7on public islands."
+                        },
+                        {
+                            "name": "Fishing Festival",
+                            "description": "Start a special fishing event the first §b3 §7days of each month!"
+                        }
+                    ],
+                    "votes": 104435
+                },
+                {
+                    "key": "pets",
+                    "name": "Diana",
+                    "perks": [
+                        {
+                            "name": "Pet XP Buff",
+                            "description": "Gain §d35% §7more pet XP."
+                        }
+                    ],
+                    "votes": 26717
+                },
+                {
+                    "key": "farming",
+                    "name": "Finnegan",
+                    "perks": [
+                        {
+                            "name": "Farming Simulator",
+                            "description": "There is a §a25% §7chance for Mathematical Hoes and the §9Cultivating Enchantment §7to count twice."
+                        },
+                        {
+                            "name": "GOATed",
+                            "description": "§eJacob\u0027s Farming Contest §7brackets include up to §a10% §7more players each."
+                        },
+                        {
+                            "name": "Pelt-pocalypse",
+                            "description": "Obtain §a1.5x §7more §5pelts §7from §aTrevor §7in the §eMushroom Desert§7, hunt a new trapper mob, and purchase items from a new trapper shop."
+                        }
+                    ],
+                    "votes": 132945
+                },
+                {
+                    "key": "events",
+                    "name": "Foxy",
+                    "perks": [
+                        {
+                            "name": "Benevolence",
+                            "description": "Gain §c2.5x §7gifts from the attack event on Jerry\u0027s Workshop."
+                        },
+                        {
+                            "name": "Sweet Tooth",
+                            "description": "Grants §a+20% §7chance to get Candy from mobs during the §6Spooky Festival§7."
+                        },
+                        {
+                            "name": "Extra Event",
+                            "description": "Schedules an extra §6Mining Fiesta §7event during the year."
+                        }
+                    ],
+                    "votes": 50893
+                }
+            ]
+        }
+    },
+    "current": {
+        "year": 335,
+        "candidates": [
+            {
+                "key": "mining",
+                "name": "Cole",
+                "perks": [
+                    {
+                        "name": "Prospection",
+                        "description": "Mining minions work §a25% §7faster."
+                    }
+                ],
+                "votes": 15927
+            },
+            {
+                "key": "dungeons",
+                "name": "Paul",
+                "perks": [
+                    {
+                        "name": "EZPZ",
+                        "description": "Gain §e10 §7bonus score on dungeon runs."
+                    }
+                ],
+                "votes": 60196
+            },
+            {
+                "key": "economist",
+                "name": "Diaz",
+                "perks": [
+                    {
+                        "name": "Barrier Street",
+                        "description": "Gain §625% §7more bank interest."
+                    },
+                    {
+                        "name": "Shopping Spree",
+                        "description": "Increase daily NPC buy limits by §e10x§7."
+                    }
+                ],
+                "votes": 20836
+            },
+            {
+                "key": "farming",
+                "name": "Finnegan",
+                "perks": [
+                    {
+                        "name": "Farming Simulator",
+                        "description": "There is a §a25% §7chance for Mathematical Hoes and the §9Cultivating Enchantment §7to count twice."
+                    },
+                    {
+                        "name": "GOATed",
+                        "description": "§eJacob\u0027s Farming Contest §7brackets include up to §a10% §7more players each."
+                    },
+                    {
+                        "name": "Pelt-pocalypse",
+                        "description": "Obtain §a1.5x §7more §5pelts §7from §aTrevor §7in the §eMushroom Desert§7, hunt a new trapper mob, and purchase items from a new trapper shop."
+                    }
+                ],
+                "votes": 399462
+            },
+            {
+                "key": "events",
+                "name": "Foxy",
+                "perks": [
+                    {
+                        "name": "Benevolence",
+                        "description": "Gain §c2.5x §7gifts from the attack event on Jerry\u0027s Workshop."
+                    },
+                    {
+                        "name": "Sweet Tooth",
+                        "description": "Grants §a+20% §7chance to get Candy from mobs during the §6Spooky Festival§7."
+                    },
+                    {
+                        "name": "Extra Event",
+                        "description": "Schedules an extra §6Spooky Festival §7event during the year."
+                    }
+                ],
+                "votes": 84089
+            }
+        ]
+    }
+}
