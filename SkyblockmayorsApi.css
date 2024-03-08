@@ -1,6 +1,12 @@
 body{
-    color: rgb(255, 255, 255);
-    background-color: rgb(36, 32, 32);
+    background-image: url(ServerBackGround.png);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+#MayorTables{
+padding-top: 5rem;
 }
 
 .PreviousElectionInfoTable{
@@ -22,3 +28,39 @@ td{
 th{
     border: 2px solid rgb(224, 215, 215);
 }
+
+.accordion {
+    background-color: rgba(233, 210, 210, 0.486);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+  }
+  
+  .active, .accordion:hover {
+    background-color: rgb(114, 116, 121);
+    color: white;
+  }
+  
+  .panel {
+    color: white;
+    padding: 0 18px;
+    background-color: rgba(44, 43, 43, 0);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 20px;
+  }
+  .accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }

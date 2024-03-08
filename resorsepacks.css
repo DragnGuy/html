@@ -1,8 +1,8 @@
 body {
-  background-image: url(background.png);
-  background-repeat: no-repeat;
+  background-image: url(ServerBackGround.png);
   background-size: cover;
-  color: white;
+  background-attachment: fixed;
+  color: #ffffff;
 }
 
 

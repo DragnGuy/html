@@ -1,13 +1,13 @@
 body{
   background-image: url(ServerBackGround.png);
-  background-size: contain;
-  background-repeat: repeat-y;
-  color: white;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
     
 }
 
 #FixedLeft{
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(128, 128, 128, 0.274);
     flex-direction: column;
     display: flex;
     position: fixed;
@@ -75,8 +75,8 @@ button{
 }
 
 .accordion {
-    background-color: rgb(191, 203, 191);
-    color: #444;
+    background-color: rgba(255, 255, 255, 0.226);
+    color: #ffffff;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -84,6 +84,8 @@ button{
     border: none;
     outline: none;
     transition: 0.4s;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
   }
   
   .active, .accordion:hover {
@@ -94,10 +96,11 @@ button{
   .panel {
     color: white;
     padding: 0 18px;
-    background-color: rgba(44, 43, 43, 0.456);
+    background-color: rgba(44, 43, 43, 0);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    border-radius: 20px;
   }
   .accordion:after {
     content: '\02795';

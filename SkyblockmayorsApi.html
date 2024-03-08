@@ -8,41 +8,60 @@
 </head>
 <body>
 
-    <h1><center>Current Mayor</center></h1>
-    <table class="CurrentMayorTable">
-        <thead>
-            <th>Name</th>
-            <th>Type Of Mayor</th>
-            <th>Perks</th>
-            <th>Votes</th>
-        </thead>
-        <tbody id="Currentmayor"></tbody>
 
-    </table>
+    <div id="MayorTables">
+    <button class="accordion">Current Mayor</button>
+    <div class="panel">
+      <div class="Skyblockelectionpage">
+        <table class="CurrentMayorTable">
+            <thead>
+                <th>Name</th>
+                <th>Type Of Mayor</th>
+                <th>Perks</th>
+                <th>Votes</th>
+            </thead>
+            <tbody id="Currentmayor"></tbody>
+        </table>
+      </div>
+    </div>
 
-    <h1><center>Previous Skyblock Election</center></h1>
-    <table class="PreviousElectionInfoTable">
-        <thead>
-            <th>Name</th>
-            <th>Type Of Mayor</th>
-            <th>Perks</th>
-            <th>Votes</th>
-        </thead>
-        <tbody id="LastRunningCandidatesTable"></tbody>
+    <br>
 
-    </table>
+    <button class="accordion">Current Running Candidates</button>
+    <div class="panel">
+      <div class="Skyblockelectionpage">
+        <table class="CurrentElectionInfoTable">
+            <thead>
+                <th>Name</th>
+                <th>Type Of Mayor</th>
+                <th>Perks</th>
+                <th>Votes</th>
+            </thead>
+            <tbody id="CurrentRunningCandidatesTable"></tbody>
+        </table>
+      </div>
+    </div>
 
-    <h1><center>Current Running Candidates</center></h1>
-    <table class="CurrentElectionInfoTable">
-        <thead>
-            <th>Name</th>
-            <th>Type Of Mayor</th>
-            <th>Perks</th>
-            <th>Votes</th>
-        </thead>
-        <tbody id="CurrentRunningCandidatesTable"></tbody>
-    </table>
+    <br>
+
+     <button class="accordion">Previous Skyblock Election</button>
+    <div class="panel">
+      <div class="Skyblockelectionpage">
+        <table class="PreviousElectionInfoTable">
+            <thead>
+                <th>Name</th>
+                <th>Type Of Mayor</th>
+                <th>Perks</th>
+                <th>Votes</th>
+            </thead>
+            <tbody id="LastRunningCandidatesTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+
 </body>
+<script src="openbox.js"></script>
 <script src="CurrentSkyblockElectionApI.js"></script>
 <script src="LastSkyblockElectionApI.js"></script>
 <script src="CurrentmayorAPI.js"></script>
