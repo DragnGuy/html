@@ -1,0 +1,44 @@
+body{
+    background-image: url(ServerBackGround.png);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.Back{
+    color: white;
+    font-family: -apple-system;
+    padding-left: 1rem;
+    padding-right: 15rem;
+    flex-direction: column;
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+  }
+
+.BazaarTable{
+    width: 100%;
+}
+
+td{
+    border: 2px solid rgb(138, 133, 133);
+    
+    text-align: center;
+}
+
+th{
+    border: 2px solid rgb(224, 215, 215);
+}
+
+a {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: rgb(231, 225, 225);
+  }
+  
+  a:visited {
+    color: rgb(231, 225, 225);
+  }
