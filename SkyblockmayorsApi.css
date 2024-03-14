@@ -5,7 +5,6 @@ body{
     color: #ffffff;
 }
 #topbar{
-position: fixed;
 width: 100%;
 z-index: 50;
 }
@@ -44,9 +43,7 @@ z-index: 50;
     font-weight: 700;
   }
 
-#MayorTables{
-padding-top: 5rem;
-}
+
 
 .PreviousElectionInfoTable{
     width: 100%;
