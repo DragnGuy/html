@@ -1,0 +1,95 @@
+body{
+    background-image: url(ServerBackGround.png);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.Back{
+    color: white;
+    font-family: -apple-system;
+    padding-left: 1rem;
+    padding-right: 15rem;
+    flex-direction: column;
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+  }
+
+  #FixedLeft{
+    width: 30%;
+    background-color: rgba(0, 17, 255, 0.138);
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+  #FixedRight{
+    width: 65%;
+    padding-left: 35%;
+    height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: rgb(231, 225, 225);
+  }
+  
+  a:visited {
+    color: rgb(231, 225, 225);
+  }
+
+  .accordion {
+    background-color: rgba(255, 255, 255, 0.226);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+  }
+  
+  .active, .accordion:hover {
+    background-color: rgb(114, 116, 121);
+    color: white;
+  }
+  
+  .panel {
+    color: white;
+    padding: 0 18px;
+    background-color: rgba(67, 65, 65, 0.8);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 20px;
+  }
+  .accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .downloadbutton{ 
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(85, 85, 85);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;  
+  }
