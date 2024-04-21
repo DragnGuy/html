@@ -18,13 +18,25 @@ fetch("https://api.hypixel.net/v2/skyblock/bazaar")
       </tr>
     `;
 
+    const BuggedProductNames = {
+      "INK_SACK:3": "COCOA BEANS",
+      "INK_SACK:4": "LAPIS LAZULI",
+      "LOG_2:1": "DARK OAK WOOD",
+      "RAW_FISH:3": "PUFFERFISH",
+      "RAW_FISH:2": "CLOWNFISH",
+      "RAW_FISH:1": "RAW SALMON",
+      "LOG:1": "SPRUCE WOOD",
+      "LOG:3": "JUNGLE WOOD",
+      "LOG:2": "BIRCH WOOD",
+      "SAND:1": "RED SAND"
+    }
 
     for (const productId in products) {
       const product = products[productId];
       const quickStatus = product.quick_status;
       const SellPrice = parseFloat(quickStatus.sellPrice).toFixed(1);
       const BuyPrice = parseFloat(quickStatus.buyPrice).toFixed(1);  
-      const formattedProductId = productId.replace(/_/g, ' ');
+      const formattedProductId = BuggedProductNames[productId] || productId.replace(/_/g, ' ');
       
       tableRows += `
         <tr>

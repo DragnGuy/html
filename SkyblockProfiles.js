@@ -1,0 +1,1 @@
+fetch("https://api.hypixel.net/skyblock/profiles")
