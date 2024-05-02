@@ -5,7 +5,7 @@ const profileTableDiv = document.getElementById('Profiletable');
 fetchDataButton.addEventListener('click', () => {
     const playerName = playerNameInput.value;
 
-    fetch(`https://api.minecraftservices.com/users/profiles/minecraft/${playerName}`)
+    fetch(`https://https://api.mojang.com/users/profiles/minecraft/${playerName}`)
     .then(playerNameResponse => playerNameResponse.json())
         .then(IDResult => {
             const PlayerUUID = IDResult.id;
