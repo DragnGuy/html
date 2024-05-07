@@ -1,18 +1,12 @@
 const playerNameInput = document.getElementById('playerNameInput');
 const fetchDataButton = document.getElementById('fetchDataButton');
 const profileTableDiv = document.getElementById('Profiletable');
-
+const key = '9805cf45-c807-4dbf-a630-1eca5e0ed25e'
 fetchDataButton.addEventListener('click', () => {
-    const playerName = playerNameInput.value;
+    const PlayerUUID = playerNameInput.value;
 
-    fetch(`https://api.mojang.com/users/profiles/minecraft/${playerName}`)
-    .then(playerNameResponse => playerNameResponse.json())
-        .then(IDResult => {
-            const PlayerUUID = IDResult.id;
-
-            return fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=7516f1c9-2688-4183-b377-74aec707a6e5&uuid=${PlayerUUID}`);
-        })
-        .then(response => response.json())
+    fetch(`https://api.hypixel.net/v2/skyblock/profiles?key=${key}&uuid=${PlayerUUID}`)
+        .then(res => res.json())
         .then(data => {
             const selectedProfile = data.profiles.find(profile => profile.selected);
 
@@ -22,9 +16,17 @@ fetchDataButton.addEventListener('click', () => {
             } else {
                 console.error('No selected profile found');
             }
-        })
+            })
+
+            .then(
+                fetch(`https://api.hypixel.net/v2/skyblock/profile?key=${key}&profile=${selectedProfile}`))
+                .then(response => response.json())
+                .then(info => {
+                    cutename = info.cute_name;
+                })
+
+
         .catch(error => {
             console.error('An error occurred:', error);
-        });
-});   
-
+        });  
+})
