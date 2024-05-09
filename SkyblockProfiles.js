@@ -36,8 +36,9 @@ fetchDataButton.addEventListener('click', () => {
         })
         .then(response => response.json())
         .then(info => {
-            cutename = info.cute_name;
-            console.log(cutename);
+            cutename = info.profile.profile_id;
+            console.log('your profile id is', cutename);
+            
         })
         .catch(error => {
             console.error('Error:', error);
