@@ -4,7 +4,7 @@ fetch("https://api.hypixel.net/v2/resources/skyblock/election")
         const data = res.mayor;
         let items = '';
        
-        items += `<li>Year ${res.mayor.election.year}</li>`
+        items += `<li>Skyblock Year ${res.mayor.election.year}</li>`
 
         document.getElementById('CurrentSkyblockYear').innerHTML = items;
     })
