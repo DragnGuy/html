@@ -1,7 +1,7 @@
 const playerNameInput = document.getElementById('playerNameInput');
 const fetchDataButton = document.getElementById('fetchDataButton');
 const profileTableDiv = document.getElementById('Profiletable');
-const key = '9805cf45-c807-4dbf-a630-1eca5e0ed25e';
+const key = '';
 
 fetchDataButton.addEventListener('click', () => {
     const PlayerUUID = playerNameInput.value;
