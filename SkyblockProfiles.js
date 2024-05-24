@@ -1,7 +1,9 @@
+require('dotenv').config();
 const playerNameInput = document.getElementById('playerNameInput');
 const fetchDataButton = document.getElementById('fetchDataButton');
 const profileTableDiv = document.getElementById('Profiletable');
-const key = '';
+
+const key = process.env.API_KEY;
 
 fetchDataButton.addEventListener('click', () => {
     const PlayerUUID = playerNameInput.value;

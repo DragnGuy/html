@@ -13,7 +13,7 @@ fetch("https://api.hypixel.net/v2/skyblock/bazaar")
         <th>Sell Orders</th>
         <th>Buy Price</th>
         <th>Buy Volume</th>
-        <th>Buy Moving Week</th>1
+        <th>Buy Moving Week</th>
         <th>Buy Orders</th>
       </tr>
     `;
