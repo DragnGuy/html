@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SkyblockmayorsApi.css">
+    <title>Skyblock Election Stats</title>
+</head>
+<body>
+
+    <div id="topbar">
+        <ul class="links">
+            <li class="Back"><a href="index.html">< Back to Main Page</a></li>
+            <li id="CurrentSkyblockYear"></li>
+        </ul>
+    </div>
+
+    <div id="MayorTables">
+        <button class="accordion">Current Mayor</button>
+        <div class="panel">
+        <div class="Skyblockelectionpage">
+            <table class="CurrentMayorTable">
+                <thead>
+                    <th>Name</th>
+                    <th>Type Of Mayor</th>
+                    <th>Perks</th>
+                    <th>Year</th>
+                </thead>
+                <tbody id="Currentmayor"></tbody>
+            </table>
+        </div>
+        </div>
+
+        <br>
+
+        <button class="accordion">Current Running Candidates</button>
+        <div class="panel">
+        <div class="Skyblockelectionpage">
+            <table class="CurrentElectionInfoTable">
+                <thead>
+                    <th>Name</th>
+                    <th>Type Of Mayor</th>
+                    <th>Perks</th>
+                    <th>Votes</th>
+                </thead>
+                <tbody id="CurrentRunningCandidatesTable"></tbody>
+            </table>
+        </div>
+        </div>
+
+        <br>
+
+        <button class="accordion">Previous Skyblock Election</button>
+        <div class="panel">
+        <div class="Skyblockelectionpage">
+            <table class="PreviousElectionInfoTable">
+                <thead>
+                    <th>Name</th>
+                    <th>Type Of Mayor</th>
+                    <th>Perks</th>
+                    <th>Votes</th>
+                </thead>
+                <tbody id="LastRunningCandidatesTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+<script src="openbox.js"></script>
+<script src="CurrentElectionYearSkyblockAPI.js"></script>
+<script src="CurrentSkyblockElectionApI.js"></script>
+<script src="LastSkyblockElectionApI.js"></script>
+<script src="CurrentmayorAPI.js"></script>
+
+</html>
