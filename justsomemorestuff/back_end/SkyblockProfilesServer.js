@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-//Enable CORS for all routes
+// Enable CORS for all routes
 app.use(cors());
 
 // Serve static files from the frontend directory
@@ -19,13 +19,22 @@ app.get('/skyblock-player-stats', (req, res) => {
 
 // API route for fetching player profile
 app.get('/api/profile/:uuid', async (req, res) => {
-  const uuid = req.params.uuid;
+  const PlayerName = req.params.uuid;
   const key = process.env.API_KEY;
 
   try {
+    // Fetch player UUID from player name
+    const NameToUUIDResponse = await axios.get(`https://api.mojang.com/users/profiles/minecraft/${PlayerName}`);
+
+    if (!NameToUUIDResponse.data || !NameToUUIDResponse.data.id) {
+      return res.status(404).send('Player not found.');
+    }
+
+    const playerUUID = NameToUUIDResponse.data.id;
+
     // Fetch profiles data
-    const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
-      params: { key: key, uuid: uuid }
+    const profilesResponse = await axios.get('https://api.hypixel.net/skyblock/profiles', {
+      params: { key: key, uuid: playerUUID }
     });
 
     const data = profilesResponse.data;
@@ -45,7 +54,7 @@ app.get('/api/profile/:uuid', async (req, res) => {
 
     if (selectedProfileUUID) {
       // Fetch profile data for the selected profile
-      const profileResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profile', {
+      const profileResponse = await axios.get('https://api.hypixel.net/skyblock/profile', {
         params: { key: key, profile: selectedProfileUUID }
       });
       res.json(profileResponse.data); // Send profile data as JSON response
