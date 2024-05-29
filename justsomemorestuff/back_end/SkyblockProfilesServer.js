@@ -3,6 +3,9 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
+//for decompressing the base64 to gzip
+const zlib = require('zlib');
+const fs = require('fs');
 const app = express();
 const port = 3000;
 
@@ -21,6 +24,7 @@ app.get('/skyblock-player-stats', (req, res) => {
 app.get('/api/profile/:uuid', async (req, res) => {
   const PlayerName = req.params.uuid;
   const key = process.env.API_KEY;
+  
 
   try {
     // Fetch player UUID from player name
@@ -57,11 +61,30 @@ app.get('/api/profile/:uuid', async (req, res) => {
       const profileResponse = await axios.get('https://api.hypixel.net/skyblock/profile', {
         params: { key: key, profile: selectedProfileUUID }
       });
-      res.json(profileResponse.data); // Send profile data as JSON response
-    } else {
-      res.status(404).send('No selected profile found.');
     }
-  } catch (error) {
+    // Example Base64 encoded gzip data
+    const base64Data = res.profileResponse.profile.member[PlayerName].rift.inventory.inv_content
+
+    // Step 1: Decode Base64 string to Buffer
+    const gzipBuffer = Buffer.from(base64Data, 'base64');
+
+    // Step 2: Decompress the gzip Buffer
+    zlib.gunzip(gzipBuffer, (err, decompressedBuffer) => {
+        if (err) {
+            console.error('Error during decompression:', err);
+            return;
+        }
+
+        // Step 3: Handle the decompressed data
+        const decompressedData = decompressedBuffer.toString('utf-8');
+
+        res.json({ decompressedData }); // Send profile data as JSON response
+
+        console.log('Data has been decompressed');
+    });
+  }
+  // errors
+ catch (error) {
     console.error('Error fetching data:', error.message);
     res.status(500).send(error.message); // Send error message as response
   }
