@@ -23,6 +23,8 @@ app.get('/api/profile/:uuid', async (req, res) => {
   const key = process.env.API_KEY;
 
   try {
+
+    
     // Fetch profiles data
     const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
       params: { key: key, uuid: uuid }
