@@ -7,7 +7,12 @@ const app = express();
 const port = 3000;
 
 //Enable CORS for all routes
-app.use(cors());
+const corsOptions = {
+  origin: 'https://justsomemorestuff.com',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 // Serve static files from the frontend directory
 app.use(express.static(path.join(__dirname, '../front_end')));
