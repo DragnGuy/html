@@ -10,11 +10,11 @@ const port = 3000;
 app.use(cors());
 
 // Serve static files from the frontend directory
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '../front_end')));
 
 // Route for serving SkyblockPlayerStats.html
 app.get('/skyblock-player-stats', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/SkyblockPlayerStats.html'));
+  res.sendFile(path.join(__dirname, '../front_end/SkyblockPlayerStats.html'));
 });
 
 // API route for fetching player profile
