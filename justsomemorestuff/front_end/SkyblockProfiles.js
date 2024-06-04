@@ -5,7 +5,7 @@ const profileTableDiv = document.getElementById('profileTableDiv');
 fetchDataButton.addEventListener('click', () => {
   const PlayerUUID = playerNameInput.value;
 
-  fetch(`http://localhost:3000/api/profile/${PlayerUUID}`)
+  fetch(`https://justsomemorestuff.com/api/profile/${PlayerUUID}`)
     .then(res => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
