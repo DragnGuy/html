@@ -9,7 +9,7 @@ const port = 3000;
 //Enable CORS for all routes
 app.use(cors());
 
-// Serve static files from the frontend directory
+// Serve static files from the frontend directory.
 app.use(express.static(path.join(__dirname, '../front_end')));
 
 // Route for serving SkyblockPlayerStats.html
