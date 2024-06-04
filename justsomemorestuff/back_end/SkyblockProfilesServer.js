@@ -10,11 +10,11 @@ const port = 3000;
 app.use(cors());
 
 // Serve static files from the frontend directory
-app.use(express.static(path.join(__dirname, '../front_end')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Route for serving SkyblockPlayerStats.html
 app.get('/skyblock-player-stats', (req, res) => {
-  res.sendFile(path.join(__dirname, '../front_end/SkyblockPlayerStats.html'));
+  res.sendFile(path.join(__dirname, '../frontend/SkyblockPlayerStats.html'));
 });
 
 // API route for fetching player profile
@@ -23,6 +23,8 @@ app.get('/api/profile/:uuid', async (req, res) => {
   const key = process.env.API_KEY;
 
   try {
+
+    
     // Fetch profiles data
     const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
       params: { key: key, uuid: uuid }
