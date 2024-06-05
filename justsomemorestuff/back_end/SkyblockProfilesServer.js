@@ -18,29 +18,32 @@ app.get('/skyblock-player-stats', (req, res) => {
 });
 
 // API route for fetching player profile
-app.get('/api/profile/:uuid', async (req, res) => {
-  const uuid = req.params.uuid;
+app.get('/api/profile/:name', async (req, res) => {
+  const Name = req.params.name;
   const key = process.env.API_KEY;
 
   try {
+    // convert the player name to a uuid
+    const NameToUUID = await axios.get(`https://api.mojang.com/users/profiles/minecraft/${Name}`)
+    const uuid = NameToUUID.data.id;
+    console.log('your player uuid is:', uuid)
 
-    
-    // Fetch profiles data
-    const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
-      params: { key: key, uuid: uuid }
-    });
+      // Fetch profiles data
+      const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
+        params: { key: key, uuid: uuid }
+      });
 
-    const data = profilesResponse.data;
+      const data = profilesResponse.data;
 
-    // Function to get the UUID of the currently selected profile
-    function getCurrentSelectedProfileId(data) {
-      for (const profile of data.profiles) {
-        if (profile.selected) {
-          return profile.profile_id;
+      // Function to get the UUID of the currently selected profile
+      function getCurrentSelectedProfileId(data) {
+        for (const profile of data.profiles) {
+          if (profile.selected) {
+            return profile.profile_id;
+          }
         }
+        return null;
       }
-      return null;
-    }
 
     // Get UUID of currently selected profile
     const selectedProfileUUID = getCurrentSelectedProfileId(data);
