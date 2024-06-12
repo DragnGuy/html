@@ -1,5 +1,4 @@
 require('dotenv').config();
-const pako = require('pako');
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -26,15 +25,9 @@ app.get('/api/profile/:name', async (req, res) => {
   try {
     // convert the player name to a uuid
     const NameToUUID = await axios.get(`https://api.mojang.com/users/profiles/minecraft/${Name}`)
-      
-      if (!NameToUUID.data.id || !NameToUUID.data) {
-        console.log('No player found by the name:', Name);
-        return res.status(404).send('Player not found');
-      }
-
     const uuid = NameToUUID.data.id;
-    const trimmeduuid = uuid.replace(/-/g, '');
-    console.log('your player uuid is:', uuid);
+    console.log('your player uuid is:', uuid)
+    
 
       // Fetch profiles data
       const profilesResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profiles', {
@@ -61,34 +54,11 @@ app.get('/api/profile/:name', async (req, res) => {
       const profileResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profile', {
         params: { key: key, profile: selectedProfileUUID }
       });
-
-      let base64Data = profileResponse.data.profile.members.$[trimmeduuid].invintory.inv_content;
-      let result = decodeAndDecompress(base64Data);
-      console.log("decoding complete");
-  
-      // Function to decode Base64 and decompress
-      function decodeAndDecompress(base64Data) {
-          // Convert Base64 string to binary data
-          let binaryString = atob(base64Data);
-  
-          // Convert binary string to Uint8Array
-          let len = binaryString.length;
-          let bytes = new Uint8Array(len);
-          for (let i = 0; i < len; i++) {
-              bytes[i] = binaryString.charCodeAt(i);
-          }
-  
-          // Decompress the data using pako
-          let decompressedData = pako.inflate(bytes);
-  
-          // Convert decompressed data to a string (assuming it's text data)
-          let decompressedString = new TextDecoder().decode(decompressedData);
-  
-          return decompressedString;
-      }
- 
       
-      res.decodeAndDecompress(base64Data); // Send profile data as JSON response
+      invintoryBase64 = profileResponse.data.profile.member[uuid].invintory.wardrobecontents;
+      
+      console.log(invintoryBase64)
+      // res.json(profileResponse.data); // Send profile data as JSON response
     } else {
       res.status(404).send('No selected profile found.');
     }
