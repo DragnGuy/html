@@ -54,11 +54,12 @@ app.get('/api/profile/:name', async (req, res) => {
       const profileResponse = await axios.get('https://api.hypixel.net/v2/skyblock/profile', {
         params: { key: key, profile: selectedProfileUUID }
       });
+     
+      let riftinventoryBase64 = profileResponse.data.profile.members[uuid].rift.inventory.inv_contents;
       
-      invintoryBase64 = profileResponse.data.profile.member[uuid].invintory.wardrobecontents;
-      
-      console.log(invintoryBase64)
-      // res.json(profileResponse.data); // Send profile data as JSON response
+      console.log(riftinventoryBase64)
+
+      res.json(profileResponse.data); // Send profile data as JSON response
     } else {
       res.status(404).send('No selected profile found.');
     }
