@@ -56,8 +56,23 @@ app.get('/api/profile/:name', async (req, res) => {
       });
      
       let riftinventoryBase64 = profileResponse.data.profile.members[uuid].rift.inventory.inv_contents;
-      
-      console.log(riftinventoryBase64)
+
+      Base64StringForFormating = String(riftinventoryBase64);
+
+      console.log('unformatted string is: ',Base64StringForFormating);
+
+      // Extract the Base64 string from the JSON response
+      let regex = /'([^']*)'/;
+      let match = Base64StringForFormating.match(regex);
+
+      console.log('match is:',match);
+
+      // Check if a match was found and extract the string
+      let formattedBase64 = match ? match[1] : null;
+
+      // Output the result
+      console.log('formattedBase64 is:',formattedBase64);  
+          
 
       res.json(profileResponse.data); // Send profile data as JSON response
     } else {
