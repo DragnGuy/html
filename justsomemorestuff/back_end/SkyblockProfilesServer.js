@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const pako = require('pako');
 const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
@@ -55,25 +56,35 @@ app.get('/api/profile/:name', async (req, res) => {
         params: { key: key, profile: selectedProfileUUID }
       });
      
-      let riftinventoryBase64 = profileResponse.data.profile.members[uuid].rift.inventory.inv_contents;
+      let inventoryBase64 = profileResponse.data.profile.members[uuid].rift.inventory.inv_contents;
 
-      Base64StringForFormating = String(riftinventoryBase64);
+      // get the base64 string from the inventoryBase64 response
+      let base64 = inventoryBase64.data; 
+      let Base64StringForFormating = String(base64);
 
-      console.log('unformatted string is: ',Base64StringForFormating);
+      //function for deciding base64 string
+      function decodeAndDecompress(Base64StringForFormating) {
+          // Convert Base64 string to binary data
+          let binaryString = atob(Base64StringForFormating);
 
-      // Extract the Base64 string from the JSON response
-      let regex = /'([^']*)'/;
-      let match = Base64StringForFormating.match(regex);
+          // Convert binary string to Uint8Array
+          let len = binaryString.length;
+          let bytes = new Uint8Array(len);
+          for (let i = 0; i < len; i++) {
+              bytes[i] = binaryString.charCodeAt(i);
+          }
 
-      console.log('match is:',match);
+          // Decompress the data using pako
+          let decompressedData = pako.inflate(bytes);
 
-      // Check if a match was found and extract the string
-      let formattedBase64 = match ? match[1] : null;
-
-      // Output the result
-      console.log('formattedBase64 is:',formattedBase64);  
-          
-
+          // Convert decompressed data to a string (assuming it's text data)
+          let decompressedString = new TextDecoder().decode(decompressedData);
+          console.log(decompressedString);
+          return decompressedString;
+      }
+      let rundecode = decodeAndDecompress(Base64StringForFormating);
+    
+      
       res.json(profileResponse.data); // Send profile data as JSON response
     } else {
       res.status(404).send('No selected profile found.');
