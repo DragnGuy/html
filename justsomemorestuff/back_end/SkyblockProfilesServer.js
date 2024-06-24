@@ -79,13 +79,12 @@ app.get('/api/profile/:name', async (req, res) => {
 
           // Convert decompressed data to a string (assuming it's text data)
           let decompressedString = new TextDecoder().decode(decompressedData);
-          console.log(decompressedString);
           return decompressedString;
       }
       let rundecode = decodeAndDecompress(Base64StringForFormating);
-    
       
-      res.json(profileResponse.data); // Send profile data as JSON response
+      
+      res.json({ rundecode }); // Send profile data as JSON response
     } else {
       res.status(404).send('No selected profile found.');
     }
