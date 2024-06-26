@@ -82,9 +82,12 @@ app.get('/api/profile/:name', async (req, res) => {
           return decompressedString;
       }
       let rundecode = decodeAndDecompress(Base64StringForFormating);
+
+      let CompleteString = String(rundecode);
+      console.log(CompleteString);
       
-      
-      res.json({ rundecode }); // Send profile data as JSON response
+      res.json(CompleteString); // Send profile decompressd data as JSON response
+      // previously the backend sent all the profile data to the front end using "res.json(profileResponse);"
     } else {
       res.status(404).send('No selected profile found.');
     }

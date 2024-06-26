@@ -13,8 +13,6 @@ fetchDataButton.addEventListener('click', () => {
       return res.json();
     })
     .then(info => {
-      const profileId = info.profile.profile_id;
-      console.log('Your profile ID is', profileId);
       profileTableDiv.innerText = JSON.stringify(info, null, 2);
     })
     .catch(error => {
