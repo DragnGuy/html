@@ -56,7 +56,7 @@ app.get('/api/profile/:name', async (req, res) => {
         params: { key: key, profile: selectedProfileUUID }
       });
      
-      let inventoryBase64 = profileResponse.data.profile.members[uuid].rift.inventory.inv_contents;
+      let inventoryBase64 = profileResponse.data.profile.members[uuid].inventory.inv_contents;
 
       // get the base64 string from the inventoryBase64 response
       let base64 = inventoryBase64.data; 
@@ -83,9 +83,17 @@ app.get('/api/profile/:name', async (req, res) => {
       }
       let rundecode = decodeAndDecompress(Base64StringForFormating);
 
-      let CompleteString = String(rundecode);
-      console.log(CompleteString);
-      
+      let CompleteString = (rundecode);
+      console.log("complete string", CompleteString);
+      let formattedstring = CompleteString.slice(1);  // the slice is deleting the first line in the response
+      console.log("formatted string", formattedstring);
+
+
+
+
+
+
+
       res.json(CompleteString); // Send profile decompressd data as JSON response
       // previously the backend sent all the profile data to the front end using "res.json(profileResponse);"
     } else {
