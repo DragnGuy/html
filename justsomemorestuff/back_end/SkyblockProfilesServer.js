@@ -84,14 +84,16 @@ app.get('/api/profile/:name', async (req, res) => {
       let rundecode = decodeAndDecompress(Base64StringForFormating);
 
       let CompleteString = (rundecode);
-      console.log("complete string", CompleteString);
-      let formattedstring = CompleteString.slice(1);  // the slice is deleting the first line in the response
-      console.log("formatted string", formattedstring);
-
-
-
-
-
+      // this experimental and will probobly be removed
+      let formattedstring0 = CompleteString.substring(17);
+      let formattedstring1 = formattedstring0.replace(/☻/g, '');
+      let formattedstring2 = formattedstring1.replace(/☺/g, '');
+      let formattedstring3 = formattedstring2.replace(/§/g, '');
+      let formattedstring4 = formattedstring3.replace(/�/g, '');
+      let formattedstring5 = formattedstring4.replace(/`/g, '');
+      console.log(formattedstring5);
+      
+    
 
 
       res.json(CompleteString); // Send profile decompressd data as JSON response
