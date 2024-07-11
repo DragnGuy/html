@@ -1,13 +1,15 @@
+// including the required packages for the code to run
 require('dotenv').config();
 const express = require('express');
 const pako = require('pako');
 const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
+const { match } = require('assert');
 const app = express();
 const port = 3000;
 
-//Enable CORS for all routes
+//Enable CORS for all routes (this fixes the error with sending a request to minecraft to get the player uuid)
 app.use(cors());
 
 // Serve static files from the frontend directory.
@@ -84,19 +86,15 @@ app.get('/api/profile/:name', async (req, res) => {
       let rundecode = decodeAndDecompress(Base64StringForFormating);
 
       let CompleteString = (rundecode);
-      // this experimental and will probobly be removed
-      let formattedstring0 = CompleteString.substring(17);
-      let formattedstring1 = formattedstring0.replace(/☻/g, '');
-      let formattedstring2 = formattedstring1.replace(/☺/g, '');
-      let formattedstring3 = formattedstring2.replace(/§/g, '');
-      let formattedstring4 = formattedstring3.replace(/�/g, '');
-      let formattedstring5 = formattedstring4.replace(/`/g, '');
-      console.log(formattedstring5);
-      
+     
+      // finding the index if "display" and "ExtraAttributes", then pulling the string from in between those two values.
+      let findfirstdisplaytag = CompleteString.indexOf("display");
+      let findfirstExtraAttributestag = CompleteString.indexOf("ExtraAttributes");
+      let matching = CompleteString.substring(findfirstdisplaytag, findfirstExtraAttributestag); 
     
+      console.log(matching);
 
-
-      res.json(CompleteString); // Send profile decompressd data as JSON response
+      res.json(matching); // Send profile decompressd data as JSON response
       // previously the backend sent all the profile data to the front end using "res.json(profileResponse);"
     } else {
       res.status(404).send('No selected profile found.');
